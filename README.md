@@ -1,2 +1,2 @@
-# BattleTanks3D
-A repo for a 3D Battle Tanks game I implemented to learn MVC architecture
+# CharacterSelection
+This is the project which demonstrates how character selection works in actual games.
