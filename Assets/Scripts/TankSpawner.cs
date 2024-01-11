@@ -8,16 +8,12 @@ public class TankSpawner : MonoBehaviour
 
     private void Start()
     {
-        //if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit groundHit, LayerMask.GetMask("Ground")))
-        //    Instantiate(tankView, groundHit.point, Quaternion.identity);
-        //else
-        //    Debug.LogError("Tank Spawn failed!");
         CreateTank();
     }
 
     private void CreateTank()
     {
-        TankModel tankModel = new TankModel();
+        TankModel tankModel = new TankModel(10, 30);
         TankController tankController = new TankController(tankView, tankModel);
     }
 }
