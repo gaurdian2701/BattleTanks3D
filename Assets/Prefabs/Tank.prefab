@@ -287,8 +287,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e02237e1f355d4e99803c051b5a051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  rotationSpeed: 30
+  tankColor: {fileID: 0}
+  tankChildren:
+  - {fileID: 5368507422364790263}
+  - {fileID: 5368507422364790257}
+  - {fileID: 5368507422364790271}
+  - {fileID: 5368507422364790261}
 --- !u!54 &4227823733205788665
 Rigidbody:
   m_ObjectHideFlags: 0
