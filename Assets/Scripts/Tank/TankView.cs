@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,9 +21,9 @@ public class TankView : MonoBehaviour
 
     private void Start()
     {
-        GameObject cam = GameObject.Find("Main Camera");
-        cam.transform.SetParent(transform);
-        cam.transform.localPosition = new Vector3(0f, 3f, -8f);
+        CinemachineVirtualCamera cam = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+        cam.Follow = this.transform;
+        cam.LookAt = this.transform;
     }
 
     private void Update()
