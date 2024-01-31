@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HighExplosiveBullet
   m_EditorClassIdentifier: 
   bulletType: 0
+  damageDealt: 5
   minLaunchForce: 15
   maxLaunchForce: 30
   maxChargeTime: 0.75

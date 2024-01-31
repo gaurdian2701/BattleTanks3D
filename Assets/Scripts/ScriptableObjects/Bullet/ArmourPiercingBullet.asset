@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ArmourPiercingBullet
   m_EditorClassIdentifier: 
   bulletType: 1
+  damageDealt: 30
   minLaunchForce: 10
   maxLaunchForce: 20
   maxChargeTime: 0.5

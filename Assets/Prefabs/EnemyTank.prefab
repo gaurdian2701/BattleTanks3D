@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4719535997601817148}
   - component: {fileID: 4682491400485059558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftWheel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 5368507422367084385}
   - component: {fileID: 5368507422363660095}
   - component: {fileID: 5368507422364790271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankTracksRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 5368507422367084387}
   - component: {fileID: 5368507422363660081}
   - component: {fileID: 5368507422364790257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankTracksLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 5368507422367084389}
   - component: {fileID: 5368507422363660087}
   - component: {fileID: 5368507422364790263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankChassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,12 +337,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5368507422367084391}
-  - component: {fileID: 5427311951441844074}
   - component: {fileID: 4227823733205788665}
   - component: {fileID: 6117525416240425939}
-  - component: {fileID: 8106669580958071758}
-  m_Layer: 0
-  m_Name: Tank
+  - component: {fileID: 4934266080220045690}
+  m_Layer: 6
+  m_Name: EnemyTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,23 +364,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5427311951441844074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368507422366986887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e02237e1f355d4e99803c051b5a051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tankChildren:
-  - {fileID: 5368507422364790263}
-  - {fileID: 5368507422364790257}
-  - {fileID: 5368507422364790271}
-  - {fileID: 5368507422364790261}
 --- !u!54 &4227823733205788665
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -391,8 +373,8 @@ Rigidbody:
   m_GameObject: {fileID: 5368507422366986887}
   serializedVersion: 4
   m_Mass: 2000
-  m_Drag: 12.39
-  m_AngularDrag: 0.36
+  m_Drag: 0
+  m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -408,7 +390,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &6117525416240425939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -428,9 +410,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7487633, y: 1.0259225, z: 2.5043535}
-  m_Center: {x: -0.026530504, y: 1.416864, z: -0.058532953}
---- !u!114 &8106669580958071758
+  m_Size: {x: 1.7487633, y: 1.1043453, z: 2.243383}
+  m_Center: {x: -0.026530504, y: 1.3776526, z: -0.18901831}
+--- !u!114 &4934266080220045690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,11 +421,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5368507422366986887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dd64523231b15c4498c92592fa439da, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d0e3c861e09d1c40926742682605130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireTransform: {fileID: 2301346247676202135}
-  BulletSO: {fileID: 11400000, guid: 10b83cb1eacd6384581c9b70b7cab9cd, type: 2}
+  tankParts:
+  - {fileID: 5368507422364790263}
+  - {fileID: 5368507422364790257}
+  - {fileID: 5368507422364790271}
+  - {fileID: 5368507422364790261}
 --- !u!1 &5368507422366986891
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5368507422367084395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankRenderers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +475,7 @@ GameObject:
   - component: {fileID: 5368507422367084399}
   - component: {fileID: 5368507422363660085}
   - component: {fileID: 5368507422364790261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2301346247676202135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725386947509976404}
   - component: {fileID: 8489343207912011146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftWheel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2504351136309073605}
   - component: {fileID: 5627613393258693153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightWheel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4886647303519407949}
   - component: {fileID: 2418199590389221670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightWheel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

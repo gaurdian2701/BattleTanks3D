@@ -6,6 +6,7 @@ using UnityEngine;
 public class BulletScriptableObject : ScriptableObject
 {
     public BulletType bulletType;
+    public float damageDealt;
     public float minLaunchForce;
     public float maxLaunchForce;
     public float maxChargeTime;

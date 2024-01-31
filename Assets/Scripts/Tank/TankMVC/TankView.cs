@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,14 @@ public class TankView : MonoBehaviour
     private float movement;
     private float rotation;
 
-    public MeshRenderer tankColor;
     public MeshRenderer[] tankChildren;
+
+    public static Transform playerLocation;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        playerLocation = transform;
     }
 
     private void Start()

@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ceec10825790c4aa3879fb4fe221e4, type: 3}
-  m_Name: HomingBullet
+  m_Script: {fileID: 11500000, guid: bf2bb152e58f1a34598ed1d948114f80, type: 3}
+  m_Name: ArtilleryTank
   m_EditorClassIdentifier: 
-  bulletType: 2
-  damageDealt: 25
-  minLaunchForce: 5
-  maxLaunchForce: 15
-  maxChargeTime: 1.5
+  tankType: 2
+  tankColor: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+  movementSpeed: 8
+  tankHealth: 50
+  damageDealt: 35

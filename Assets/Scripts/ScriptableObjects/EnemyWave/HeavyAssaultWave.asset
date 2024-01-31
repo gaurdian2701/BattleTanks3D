@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ceec10825790c4aa3879fb4fe221e4, type: 3}
-  m_Name: HomingBullet
+  m_Script: {fileID: 11500000, guid: 03f51420a60741448b34573d1f342154, type: 3}
+  m_Name: HeavyAssaultWave
   m_EditorClassIdentifier: 
-  bulletType: 2
-  damageDealt: 25
-  minLaunchForce: 5
-  maxLaunchForce: 15
-  maxChargeTime: 1.5
+  enemyNumber: 5
+  enemyTypes: 00000000

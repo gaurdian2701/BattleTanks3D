@@ -309,6 +309,7 @@ MonoBehaviour:
   poolSize: 20
   bulletPrefab: {fileID: 7679209357092826286, guid: 46a9e3ea550b7654aa565e6631264219,
     type: 3}
+  bulletList: []
 --- !u!4 &517846816
 Transform:
   m_ObjectHideFlags: 0
@@ -924,4 +925,54 @@ Transform:
   - {fileID: 34389536}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1981139862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1981139864}
+  - component: {fileID: 1981139863}
+  m_Layer: 0
+  m_Name: WaveSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1981139863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981139862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae219349d463c048bbe44fb336296b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyWaveSO: {fileID: 11400000, guid: d776db6582adf084fb8d7b5cd7d8fb57, type: 2}
+  tankView: {fileID: 4934266080220045690, guid: cd1ec3d6092a96e4aafba2b4740ebcb8,
+    type: 3}
+  heavyAssault: {fileID: 11400000, guid: 10c29ffe6569c474ea840283d5c330a2, type: 2}
+  scout: {fileID: 11400000, guid: 332e0cc62674d184a9648e506181d974, type: 2}
+  artillery: {fileID: 11400000, guid: 2a90edb017a5eb84c970a6eb043a3918, type: 2}
+--- !u!4 &1981139864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981139862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.82, y: 6.55, z: -0.000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

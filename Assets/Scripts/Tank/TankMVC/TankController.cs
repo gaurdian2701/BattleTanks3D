@@ -23,7 +23,9 @@ public class TankController
 
     public void Move(float movement, float movementSpeed)
     {
-        rb.velocity = tankView.transform.forward * movement * movementSpeed;
+        Vector3 moveDirection = tankView.transform.forward * movement * movementSpeed;
+
+        rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
     }
 
     public void Rotate(float rotation, float rotationSpeed)

@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TankShooter : MonoBehaviour
 {
     [SerializeField] private Transform fireTransform;
-
     [SerializeField] BulletScriptableObject BulletSO;
 
     private float minLaunchForce;
@@ -17,6 +17,9 @@ public class TankShooter : MonoBehaviour
     private float currentLaunchForce;
     private float chargeSpeed;
     private bool fired;
+    private float bulletDamage;
+
+    public static Action BulletFired;
 
     private void Awake()
     {
@@ -25,6 +28,7 @@ public class TankShooter : MonoBehaviour
         maxChargeTime = BulletSO.maxChargeTime;
 
         bulletType = BulletSO.bulletType;
+        bulletDamage = BulletSO.damageDealt;
     }
     private void OnEnable()
     {
@@ -63,9 +67,10 @@ public class TankShooter : MonoBehaviour
 
     private void Fire()
     {
+        BulletFired?.Invoke();
         fired = false;
 
-        BulletModel bulletModel = new BulletModel(currentLaunchForce, bulletType);
+        BulletModel bulletModel = new BulletModel(currentLaunchForce, bulletType, bulletDamage);
         BulletController bulletController = new BulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
 
         currentLaunchForce = minLaunchForce;
