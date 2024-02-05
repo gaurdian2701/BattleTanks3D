@@ -1,2 +1,2 @@
-# CharacterSelection
-This is the project which demonstrates how character selection works in actual games.
+# Battle Tanks MVC
+I forked this repository to learn how MVC works and implement in in different scenarios
