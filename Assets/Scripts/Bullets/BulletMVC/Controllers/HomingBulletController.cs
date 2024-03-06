@@ -13,7 +13,6 @@ public class HomingBulletController : BulletController
     {
         enemyFound = false;
         enemyMask = bulletView.GetEnemyMask();
-        rb = bulletView.GetBulletRigidBody();
     }
 
     public override void UpdateBullet()
