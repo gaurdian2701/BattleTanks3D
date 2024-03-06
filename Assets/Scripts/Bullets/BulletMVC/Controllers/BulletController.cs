@@ -11,8 +11,6 @@ public class BulletController
     protected Rigidbody rb;
     protected Vector3 fireDirection;
 
-    protected BulletBehaviour bulletBehaviour;
-
     public BulletController(BulletView _bulletView, BulletModel _bulletModel, Transform _firePos)
     {
         bulletView = _bulletView;
