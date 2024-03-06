@@ -4,21 +4,19 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
-public class HomingBulletBehaviour : BulletBehaviour
+public class HomingBulletController : BulletController
 {
     private bool enemyFound;
     private LayerMask enemyMask;
-    public HomingBulletBehaviour(BulletView _bulletView, BulletModel _bulletModel, Vector3 _fireDirection)
+    private RaycastHit hit;
+    public HomingBulletController (BulletView _bulletView, BulletModel _bulletModel, Transform firePos) : base(_bulletView, _bulletModel, firePos)
     {
         enemyFound = false;
-        bulletView = _bulletView;
-        bulletModel = _bulletModel;
         enemyMask = bulletView.GetEnemyMask();
-        fireDirection = _fireDirection;
         rb = bulletView.GetBulletRigidBody();
     }
 
-    public override void ExecuteBehaviour()
+    public override void UpdateBullet()
     {
         if (!enemyFound)
         {

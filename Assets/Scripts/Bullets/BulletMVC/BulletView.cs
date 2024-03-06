@@ -6,6 +6,7 @@ public class BulletView : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private BoxCollider hitBox;
+
     private BulletController bulletController;
     private Rigidbody rb;
 
@@ -17,7 +18,7 @@ public class BulletView : MonoBehaviour
 
     private void FixedUpdate()
     {
-        bulletController.BulletMove();
+        bulletController.UpdateBullet();
     }
     public void SetBulletController(BulletController _bulletController)
     {
@@ -28,6 +29,7 @@ public class BulletView : MonoBehaviour
     public BoxCollider GetBoxCollider() { return hitBox; }
 
     public LayerMask GetEnemyMask() { return enemyMask;}
+    public void SetHitBoxSize(Vector3 size) => hitBox.size = size;
 
     private void OnTriggerEnter(Collider other)
     {

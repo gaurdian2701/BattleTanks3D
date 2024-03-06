@@ -6,14 +6,12 @@ using UnityEngine;
 public class TankShooter : MonoBehaviour
 {
     [SerializeField] private Transform fireTransform;
-    [SerializeField] BulletScriptableObject BulletSO;
+    [SerializeField] private BulletScriptableObject BulletSO;
 
     private float minLaunchForce;
     private float maxLaunchForce;
     private float maxChargeTime;
-
     private BulletType bulletType;
-
     private float currentLaunchForce;
     private float chargeSpeed;
     private bool fired;
@@ -64,15 +62,32 @@ public class TankShooter : MonoBehaviour
             Fire();
         }
     }
-
     private void Fire()
     {
         BulletFired?.Invoke();
         fired = false;
-
-        BulletModel bulletModel = new BulletModel(currentLaunchForce, bulletType, bulletDamage);
-        BulletController bulletController = new BulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
-
         currentLaunchForce = minLaunchForce;
+        BulletModel bulletModel = new BulletModel(currentLaunchForce, bulletType, bulletDamage);
+        BulletController bulletController;
+        BulletView bulletView = BulletPool.Instance.GetBullet();
+
+        switch(bulletType)
+        {
+            case BulletType.HighExplosive:
+                bulletController = new HighExplosiveBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+                break;
+
+            case BulletType.ArmourPiercing:
+                bulletController = new ArmourPiercingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+                break;
+
+            case BulletType.Homing:
+                bulletController = new HomingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+                break;
+
+            default:
+                bulletController = new ArmourPiercingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+                break;
+        }
     }
 }
