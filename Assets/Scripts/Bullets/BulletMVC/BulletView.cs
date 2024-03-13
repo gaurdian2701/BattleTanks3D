@@ -6,25 +6,25 @@ public class BulletView : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private BoxCollider hitBox;
+    [SerializeField] private Rigidbody rigidBody;
 
     private BulletController bulletController;
-    private Rigidbody rb;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
         hitBox.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
     {
-        bulletController.UpdateBullet();
+        bulletController.MoveBullet();
     }
     public void SetBulletController(BulletController _bulletController)
     {
         bulletController = _bulletController;
     }
-    public Rigidbody GetBulletRigidBody() { return rb; }
+    public Rigidbody GetBulletRigidBody() { return rigidBody; }
 
     public BoxCollider GetBoxCollider() { return hitBox; }
 
@@ -38,7 +38,7 @@ public class BulletView : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         hitBox.gameObject.SetActive(true);
-        StartCoroutine(nameof(WaitForImpact));
+        StartCoroutine(WaitForImpact());
     }
 
     private IEnumerator WaitForImpact()

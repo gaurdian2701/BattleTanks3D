@@ -6,25 +6,26 @@ using UnityEngine;
 
 public class HomingBulletController : BulletController
 {
-    private bool enemyFound;
+    private bool enemyHasBeenFound;
     private LayerMask enemyMask;
     private RaycastHit hit;
+    private const float sphereCastRadius = 10f;
+    private const float sphereCastDistance = 5f;
     public HomingBulletController (BulletView _bulletView, BulletModel _bulletModel, Transform firePos) : base(_bulletView, _bulletModel, firePos)
     {
-        enemyFound = false;
+        enemyHasBeenFound = false;
         enemyMask = bulletView.GetEnemyMask();
-        rb = bulletView.GetBulletRigidBody();
     }
 
-    public override void UpdateBullet()
+    public override void MoveBullet()
     {
-        if (!enemyFound)
+        if (!enemyHasBeenFound)
         {
-            if (Physics.SphereCast(bulletView.transform.position, 10f, bulletView.transform.forward, out hit, 5f, enemyMask)) //use sphere cast to check if enemy is near
-                enemyFound = true;
+            if (Physics.SphereCast(bulletView.transform.position, sphereCastRadius, bulletView.transform.forward, out hit, sphereCastDistance, enemyMask)) //use sphere cast to check if enemy is near
+                enemyHasBeenFound = true;
 
             else
-                rb.velocity = bulletModel.launchForce * fireDirection;
+                rigidBody.velocity = bulletModel.launchForce * fireDirection;
         }
         else
             HomeToTarget(hit.transform);       //Homing Logic
@@ -33,8 +34,8 @@ public class HomingBulletController : BulletController
     private void HomeToTarget(Transform targetTransform)
     {
         Quaternion lookRotation = Quaternion.LookRotation(targetTransform.transform.position - bulletView.transform.position, Vector3.up);
-        rb.MoveRotation(lookRotation);
+        rigidBody.MoveRotation(lookRotation);
 
-        rb.velocity = bulletView.transform.forward * bulletModel.launchForce;
+        rigidBody.velocity = bulletView.transform.forward * bulletModel.launchForce;
     }
 }

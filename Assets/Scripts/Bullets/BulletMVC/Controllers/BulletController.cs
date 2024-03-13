@@ -8,7 +8,7 @@ public class BulletController
     protected BulletModel bulletModel;
     protected Transform firePos;
 
-    protected Rigidbody rb;
+    protected Rigidbody rigidBody;
     protected Vector3 fireDirection;
 
     public BulletController(BulletView _bulletView, BulletModel _bulletModel, Transform _firePos)
@@ -25,11 +25,11 @@ public class BulletController
         bulletView.SetBulletController(this);
         bulletModel.SetBulletController(this);
 
-        rb = _bulletView.GetBulletRigidBody();
+        rigidBody = _bulletView.GetBulletRigidBody();
         fireDirection = firePos.forward;
     }
 
-    public virtual void UpdateBullet() { }
+    public virtual void MoveBullet() { }
 
     public void OnTriggerEnter(Collider other) 
     {

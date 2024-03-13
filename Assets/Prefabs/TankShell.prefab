@@ -130,6 +130,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   hitBox: {fileID: 2722032538740054569}
+  rigidBody: {fileID: 6385542851619100604}
 --- !u!136 &8779531887030408504
 CapsuleCollider:
   m_ObjectHideFlags: 0
