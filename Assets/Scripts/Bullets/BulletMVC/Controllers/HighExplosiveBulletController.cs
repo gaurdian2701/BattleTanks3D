@@ -6,6 +6,7 @@ using UnityEngine;
 public class HighExplosiveBulletController : BulletController
 {
     private readonly Vector3 hitBoxSize = new Vector3(5f, 1f, 5f);
+
     public HighExplosiveBulletController(BulletView _bulletView,
         BulletModel _bulletModel,
         Transform firePos) :
@@ -15,8 +16,8 @@ public class HighExplosiveBulletController : BulletController
         bulletView.SetHitBoxSize(hitBoxSize);
     }
 
-    public override void UpdateBullet()
+    public override void MoveBullet()
     {
-        rb.velocity = fireDirection * bulletModel.launchForce;
+        rigidBody.velocity = fireDirection * bulletModel.launchForce;
     }
 }
