@@ -218,65 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &262195683
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 262195685}
-  - component: {fileID: 262195684}
-  m_Layer: 0
-  m_Name: TankSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &262195684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262195683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12f543379e4e7d24e8ca52f49b574d84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tankView: {fileID: 5427311951441844074, guid: 2406ac9feaa04a243ad6b99f09efe97f,
-    type: 3}
-  tankList:
-  - movementSpeed: 10
-    rotationSpeed: 35
-    tankType: 0
-    tankColor: {fileID: 2100000, guid: c39933e60e73205419d1f79a2af1fdac, type: 2}
-  - movementSpeed: 8
-    rotationSpeed: 25
-    tankType: 1
-    tankColor: {fileID: 2100000, guid: ff21ff0ea9b18924bb1fdfbb0e58f5cb, type: 2}
-  - movementSpeed: 20
-    rotationSpeed: 45
-    tankType: 2
-    tankColor: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
---- !u!4 &262195685
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262195683}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.98, y: 14.47, z: -22.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517846814
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +264,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520421830
 GameObject:
@@ -372,7 +313,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179543937
 GameObject:
@@ -641,7 +582,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1742501532
 PrefabInstance:
@@ -664,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 3870283614252560928, guid: b02382b9e205b7f4d89a5c94e08a2724,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3870283614252560928, guid: b02382b9e205b7f4d89a5c94e08a2724,
         type: 3}
@@ -783,7 +724,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tankSpawner
       value: 
-      objectReference: {fileID: 262195684}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -924,7 +865,66 @@ Transform:
   m_Children:
   - {fileID: 34389536}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1977657597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977657599}
+  - component: {fileID: 1977657598}
+  m_Layer: 0
+  m_Name: GameService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1977657598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977657597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d8a1b9af658b14aa9527a2997f5d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankView: {fileID: 5427311951441844074, guid: 2406ac9feaa04a243ad6b99f09efe97f,
+    type: 3}
+  tankList:
+  - movementSpeed: 10
+    rotationSpeed: 35
+    tankType: 0
+    tankColor: {fileID: 2100000, guid: c39933e60e73205419d1f79a2af1fdac, type: 2}
+  - movementSpeed: 8
+    rotationSpeed: 25
+    tankType: 1
+    tankColor: {fileID: 2100000, guid: ff21ff0ea9b18924bb1fdfbb0e58f5cb, type: 2}
+  - movementSpeed: 20
+    rotationSpeed: 45
+    tankType: 2
+    tankColor: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+--- !u!4 &1977657599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977657597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.82, y: 6.55, z: -0.000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1981139862
 GameObject:
@@ -955,12 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae219349d463c048bbe44fb336296b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyWaveSO: {fileID: 11400000, guid: d776db6582adf084fb8d7b5cd7d8fb57, type: 2}
-  tankView: {fileID: 4934266080220045690, guid: cd1ec3d6092a96e4aafba2b4740ebcb8,
-    type: 3}
-  heavyAssault: {fileID: 11400000, guid: 10c29ffe6569c474ea840283d5c330a2, type: 2}
-  scout: {fileID: 11400000, guid: 332e0cc62674d184a9648e506181d974, type: 2}
-  artillery: {fileID: 11400000, guid: 2a90edb017a5eb84c970a6eb043a3918, type: 2}
+  enemyWaveSO: {fileID: 11400000, guid: 7a8c14497e06e894d88fc148264b6e6f, type: 2}
 --- !u!4 &1981139864
 Transform:
   m_ObjectHideFlags: 0
@@ -974,5 +969,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

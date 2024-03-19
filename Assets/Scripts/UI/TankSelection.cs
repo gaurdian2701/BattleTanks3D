@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class TankSelection : MonoBehaviour
 {
-    public TankSpawner tankSpawner;
-
     public void SelectGreenTank()
     {
-        tankSpawner.CreateTank(TankType.GreenTank);
+        GameService.Instance.PlayerTankSpawnService.CreateTank(TankType.GreenTank);
         this.gameObject.SetActive(false);
     }
 
     public void SelectBlueTank()
     {
-        tankSpawner.CreateTank(TankType.BlueTank);
+        GameService.Instance.PlayerTankSpawnService.CreateTank(TankType.BlueTank);
         this.gameObject.SetActive(false);
     }
 
     public void SelectRedTank()
     {
-        tankSpawner.CreateTank (TankType.RedTank);
+        GameService.Instance.PlayerTankSpawnService.CreateTank(TankType.RedTank);
         this.gameObject.SetActive(false);
     }
 }

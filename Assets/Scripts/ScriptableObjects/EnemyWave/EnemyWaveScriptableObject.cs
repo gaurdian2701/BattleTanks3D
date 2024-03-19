@@ -1,9 +1,17 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyWaveScriptableObject", menuName = "ScriptableObjects/NewEnemyWave")]
 public class EnemyWaveScriptableObject : ScriptableObject
 {
-    public int enemyNumber;
-    public List<EnemyTankType> enemyTypes;
+    public EnemyTankView EnemyView;
+    public List<EnemySpawnData> EnemyData;
+}
+
+[Serializable]
+public struct EnemySpawnData
+{
+    public EnemyTankScriptableObject EnemyTankSO;
+    public Vector3 SpawnPosition;
 }

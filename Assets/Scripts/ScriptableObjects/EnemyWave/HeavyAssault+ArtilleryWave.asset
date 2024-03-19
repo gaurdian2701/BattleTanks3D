@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f51420a60741448b34573d1f342154, type: 3}
   m_Name: HeavyAssault+ArtilleryWave
   m_EditorClassIdentifier: 
-  enemyNumber: 1
-  enemyTypes: 0000000002000000
+  EnemyView: {fileID: 4934266080220045690, guid: cd1ec3d6092a96e4aafba2b4740ebcb8,
+    type: 3}
+  EnemyData:
+  - EnemyTankSO: {fileID: 11400000, guid: 10c29ffe6569c474ea840283d5c330a2, type: 2}
+    SpawnPosition: {x: -33.41, y: 0.49, z: -9.48}
+  - EnemyTankSO: {fileID: 11400000, guid: 2a90edb017a5eb84c970a6eb043a3918, type: 2}
+    SpawnPosition: {x: -30.27, y: 0.49, z: 20.45}
+  - EnemyTankSO: {fileID: 11400000, guid: 2a90edb017a5eb84c970a6eb043a3918, type: 2}
+    SpawnPosition: {x: 19.2, y: 0.49, z: -6.9}

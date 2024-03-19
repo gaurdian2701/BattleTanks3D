@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class EnemyTankModel
 {
-    private EnemyTankController enemyTankController;
-
     public EnemyTankType tankType;
     public Material tankColor;
     public float movementSpeed;
     public float tankHealth;
     public float damageDealt;
-    public EnemyTankModel(EnemyTankScriptableObject enemyTankSO)
+    public Vector3 spawnPosition;
+    public EnemyTankModel(EnemyTankScriptableObject enemyTankSO, Vector3 spawnPosition)
     {
-        InitializeValues(enemyTankSO);
+        this.spawnPosition = spawnPosition;
+        InitializeTankInfo(enemyTankSO);
     }
 
-    private void InitializeValues(EnemyTankScriptableObject enemyTankSO)
+    private void InitializeTankInfo(EnemyTankScriptableObject enemyTankSO)
     {
         tankType = enemyTankSO.tankType;
         tankColor = enemyTankSO.tankColor;
@@ -25,6 +25,4 @@ public class EnemyTankModel
         tankHealth = enemyTankSO.tankHealth;
         damageDealt = enemyTankSO.damageDealt;
     }
-
-    public void SetEnemyTankController(EnemyTankController _enemyTankController) { enemyTankController = _enemyTankController; }
 }
