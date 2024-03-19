@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2bb152e58f1a34598ed1d948114f80, type: 3}
   m_Name: ScoutTank
   m_EditorClassIdentifier: 
-  tankType: 1
-  tankColor: {fileID: 2100000, guid: 65b34bd0b696fd64c809daa8ff1aac63, type: 2}
-  movementSpeed: 10
-  tankHealth: 50
-  damageDealt: 20
+  TankType: 1
+  TankColor: {fileID: 2100000, guid: c4c5f95d06932564c8672b4bafeb1b28, type: 2}
+  MovementSpeed: 10
+  TankHealth: 20
+  DamageDealt: 30
+  BulletSO: {fileID: 11400000, guid: 7a025a2ed578e3e429e129ee1def9625, type: 2}

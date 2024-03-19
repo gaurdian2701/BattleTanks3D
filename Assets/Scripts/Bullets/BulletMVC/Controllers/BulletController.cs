@@ -23,7 +23,6 @@ public class BulletController
         bulletView.gameObject.transform.rotation = firePos.rotation;
 
         bulletView.SetBulletController(this);
-        bulletModel.SetBulletController(this);
 
         rigidBody = _bulletView.GetBulletRigidBody();
         fireDirection = firePos.forward;

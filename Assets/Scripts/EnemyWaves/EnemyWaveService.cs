@@ -26,7 +26,7 @@ public class EnemyWaveService : MonoBehaviour
 
     private void InstantiateTank(EnemySpawnData EnemyData)
     {
-        enemyTankModel = new EnemyTankModel(EnemyData.EnemyTankSO, EnemyData.SpawnPosition);
+        enemyTankModel = new EnemyTankModel(EnemyData.EnemyTankSO, EnemyData.SpawnPosition, EnemyData.EnemyTankSO.BulletSO);
         enemyTankController = new EnemyTankController(enemyTankModel, enemyWaveSO.EnemyView);
     }
 }

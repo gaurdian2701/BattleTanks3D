@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2bb152e58f1a34598ed1d948114f80, type: 3}
   m_Name: ArtilleryTank
   m_EditorClassIdentifier: 
-  tankType: 2
-  tankColor: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
-  movementSpeed: 8
-  tankHealth: 50
-  damageDealt: 35
+  TankType: 2
+  TankColor: {fileID: 2100000, guid: 424be3af6ad117140887d3e652a89d24, type: 2}
+  MovementSpeed: 5
+  TankHealth: 100
+  DamageDealt: 35
+  BulletSO: {fileID: 11400000, guid: 238d399615479b0448c489df39f55b3e, type: 2}

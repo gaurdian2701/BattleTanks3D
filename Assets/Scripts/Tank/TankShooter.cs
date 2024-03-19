@@ -16,17 +16,17 @@ public class TankShooter : MonoBehaviour
     private float chargeSpeed;
     private bool fired;
     private float bulletDamage;
-
-    public static Action BulletFired;
+    private BulletCreationController bulletCreationController;
 
     private void Awake()
     {
         minLaunchForce = BulletSO.minLaunchForce;
         maxLaunchForce = BulletSO.maxLaunchForce;
         maxChargeTime = BulletSO.maxChargeTime;
-
         bulletType = BulletSO.bulletType;
         bulletDamage = BulletSO.damageDealt;
+
+        bulletCreationController = new BulletCreationController(bulletType, fireTransform);
     }
     private void OnEnable()
     {
@@ -64,30 +64,29 @@ public class TankShooter : MonoBehaviour
     }
     private void Fire()
     {
-        BulletFired?.Invoke();
+        GameService.Instance.EventService.BulletFired?.Invoke();
         fired = false;
         currentLaunchForce = minLaunchForce;
-        BulletModel bulletModel = new BulletModel(currentLaunchForce, bulletType, bulletDamage);
-        BulletController bulletController;
-        BulletView bulletView = BulletPool.Instance.GetBullet();
+        BulletModel bulletModel = new BulletModel(currentLaunchForce, bulletDamage);
+        BulletController bulletController = bulletCreationController.CreateBulletController(bulletModel);
 
-        switch(bulletType)
-        {
-            case BulletType.HighExplosive:
-                bulletController = new HighExplosiveBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
-                break;
+        //switch(bulletType)
+        //{
+        //    case BulletType.HighExplosive:
+        //        bulletController = new HighExplosiveBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+        //        break;
 
-            case BulletType.ArmourPiercing:
-                bulletController = new ArmourPiercingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
-                break;
+        //    case BulletType.ArmourPiercing:
+        //        bulletController = new ArmourPiercingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+        //        break;
 
-            case BulletType.Homing:
-                bulletController = new HomingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
-                break;
+        //    case BulletType.Homing:
+        //        bulletController = new HomingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+        //        break;
 
-            default:
-                bulletController = new ArmourPiercingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
-                break;
-        }
+        //    default:
+        //        bulletController = new ArmourPiercingBulletController(BulletPool.Instance.GetBullet(), bulletModel, fireTransform);
+        //        break;
+        //}
     }
 }

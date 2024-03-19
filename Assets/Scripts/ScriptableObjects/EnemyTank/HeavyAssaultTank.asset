@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2bb152e58f1a34598ed1d948114f80, type: 3}
   m_Name: HeavyAssaultTank
   m_EditorClassIdentifier: 
-  tankType: 0
-  tankColor: {fileID: 2100000, guid: c4c5f95d06932564c8672b4bafeb1b28, type: 2}
-  movementSpeed: 6
-  tankHealth: 100
-  damageDealt: 30
+  TankType: 0
+  TankColor: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+  MovementSpeed: 8
+  TankHealth: 100
+  DamageDealt: 25
+  BulletSO: {fileID: 11400000, guid: 10b83cb1eacd6384581c9b70b7cab9cd, type: 2}

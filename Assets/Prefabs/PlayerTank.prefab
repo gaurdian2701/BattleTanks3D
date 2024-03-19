@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireTransform: {fileID: 2301346247676202135}
-  BulletSO: {fileID: 11400000, guid: 238d399615479b0448c489df39f55b3e, type: 2}
+  BulletSO: {fileID: 11400000, guid: 7a025a2ed578e3e429e129ee1def9625, type: 2}
 --- !u!1 &5368507422366986891
 GameObject:
   m_ObjectHideFlags: 0
