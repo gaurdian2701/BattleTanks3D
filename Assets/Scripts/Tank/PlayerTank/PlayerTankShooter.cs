@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankShooter : MonoBehaviour
+public class PlayerTankShooter : MonoBehaviour
 {
     [SerializeField] private Transform fireTransform;
     [SerializeField] private BulletScriptableObject BulletSO;

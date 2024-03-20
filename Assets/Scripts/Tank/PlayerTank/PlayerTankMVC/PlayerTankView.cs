@@ -4,9 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankView : MonoBehaviour
+public class PlayerTankView : MonoBehaviour
 {
-    private TankController tankController;
+    private PlayerTankController tankController;
     private Rigidbody rb;
 
     private float movement;
@@ -33,7 +33,7 @@ public class TankView : MonoBehaviour
     {
         MovementInput();
     }
-    public void SetTankController(TankController _tankController)
+    public void SetTankController(PlayerTankController _tankController)
     {
         tankController = _tankController; 
     }

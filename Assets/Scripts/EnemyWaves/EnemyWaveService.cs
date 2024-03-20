@@ -2,31 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWaveService : MonoBehaviour
+public class EnemyWaveService
 {
-    [SerializeField] private EnemyWaveScriptableObject enemyWaveSO;
-
+    private EnemyWaveServiceScriptableObject enemyWaveServiceSO;
     private EnemyTankModel enemyTankModel;
     private EnemyTankController enemyTankController;
 
-    private void Awake()
+    public EnemyWaveService(EnemyWaveServiceScriptableObject enemyWaveServiceSO)
     {
-        GameService.Instance.EventService.OnPlayerSpawned += SpawnEnemies;
+        this.enemyWaveServiceSO = enemyWaveServiceSO;
+        GameService.Instance.EventService.OnPlayerSpawned += InitiateWaves;
     }
 
-    private void OnDestroy()
+    ~EnemyWaveService()
     {
-        GameService.Instance.EventService.OnPlayerSpawned -= SpawnEnemies;
+        GameService.Instance.EventService.OnPlayerSpawned -= InitiateWaves;
     }
-    private void SpawnEnemies()
+    private void InitiateWaves()
     {
-        for(int i = 0; i < enemyWaveSO.EnemyData.Count; i++)
-            InstantiateTank(enemyWaveSO.EnemyData[i]);
+        StartEnemyWave(enemyWaveServiceSO.EnemyWaves[0]);
     }
 
+    private void StartEnemyWave(EnemyWaveScriptableObject waveSO)
+    {
+        //other logic for starting wave???
+        SpawnEnemies(waveSO);
+    }
+
+    private void SpawnEnemies(EnemyWaveScriptableObject waveSO)
+    {
+        for(int i = 0; i< waveSO.EnemyData.Count; i++)
+            InstantiateTank(waveSO.EnemyData[i]);
+    }
     private void InstantiateTank(EnemySpawnData EnemyData)
     {
         enemyTankModel = new EnemyTankModel(EnemyData.EnemyTankSO, EnemyData.SpawnPosition, EnemyData.EnemyTankSO.BulletSO);
-        enemyTankController = new EnemyTankController(enemyTankModel, enemyWaveSO.EnemyView);
+        enemyTankController = new EnemyTankController(enemyTankModel, enemyWaveServiceSO.EnemyTankView);
     }
 }

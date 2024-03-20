@@ -43,7 +43,7 @@ public class BulletView : MonoBehaviour
 
     private IEnumerator WaitForImpact()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return new WaitForSecondsRealtime(0.05f);
         this.gameObject.SetActive(false);
         GameService.Instance.PoolService.BulletPool.ReturnItemToPool(bulletController);
     }

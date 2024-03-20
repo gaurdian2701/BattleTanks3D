@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyWaveScriptableObject", menuName = "ScriptableObjects/NewEnemyWave")]
 public class EnemyWaveScriptableObject : ScriptableObject
 {
-    public EnemyTankView EnemyView;
     public List<EnemySpawnData> EnemyData;
 }
 

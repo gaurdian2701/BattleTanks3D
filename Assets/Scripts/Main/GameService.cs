@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class GameService : GenericMonoSingleton<GameService>
 {
-    [SerializeField] private TankView tankView;
+    [SerializeField] private PlayerTankView tankView;
     [SerializeField] private List<Tank> tankList = new List<Tank>();
     [SerializeField] private PoolServiceScriptableObject poolServiceScriptableObject;
+    [SerializeField] private EnemyWaveServiceScriptableObject enemyWaveServiceScriptableObject;
     public EventService EventService { get; private set; }
     public PlayerTankSpawnService PlayerTankSpawnService { get; private set; }
     public PoolService PoolService { get; private set; }
+    public EnemyWaveService EnemyWaveService { get; private set; }
     
     protected override void Awake()
     {
@@ -18,6 +20,7 @@ public class GameService : GenericMonoSingleton<GameService>
         EventService = new EventService();
         PlayerTankSpawnService = new PlayerTankSpawnService(tankList, tankView);
         PoolService = new PoolService(poolServiceScriptableObject);
+        EnemyWaveService = new EnemyWaveService(enemyWaveServiceScriptableObject);
     }
 }
 
@@ -26,6 +29,6 @@ public class Tank
 {
     public float movementSpeed;
     public float rotationSpeed;
-    public TankType tankType;
+    public PlayerTankClass tankType;
     public Material tankColor;
 }

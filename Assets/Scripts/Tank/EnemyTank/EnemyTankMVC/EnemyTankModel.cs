@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyTankModel
 {
-    public EnemyTankType TankType;
+    public EnemyTankClass TankType;
     public Material TankColor;
     public float MovementSpeed;
     public float TankHealth;

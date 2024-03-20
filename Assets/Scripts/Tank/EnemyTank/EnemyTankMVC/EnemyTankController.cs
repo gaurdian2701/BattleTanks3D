@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTankController
+public class EnemyTankController : TankController<EnemyTankController>
 {
     private EnemyTankModel enemyTankModel;
     private EnemyTankView enemyTankView;
@@ -20,25 +20,20 @@ public class EnemyTankController
 
     public void FixedUpdate()
     {
-        Vector3 targetVector = TankView.playerLocation.position - enemyTankView.transform.position;
+        Vector3 targetVector = PlayerTankView.playerLocation.position - enemyTankView.transform.position;
         Move(targetVector);
         Rotate(targetVector);
     }
 
-    private void Move(Vector3 movementVector)
+    public override void Move(Vector3 movementVector)
     {
         movementVector *= enemyTankModel.MovementSpeed * Time.fixedDeltaTime;
         rigidBody.velocity = new Vector3(movementVector.x, rigidBody.velocity.y, movementVector.z);
     }
 
-    private void Rotate(Vector3 rotationVector)
+    public override void Rotate(Vector3 rotationVector)
     {
         Quaternion lookRotation = Quaternion.LookRotation(rotationVector, Vector3.up);
         rigidBody.MoveRotation(lookRotation);
-    }
-
-    public void ShootTankShell()
-    {
-
     }
 }

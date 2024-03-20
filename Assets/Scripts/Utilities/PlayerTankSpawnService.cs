@@ -6,18 +6,18 @@ using UnityEngine;
 public class PlayerTankSpawnService
 {
     private List<Tank> tankList;
-    private TankView tankView;
-    public PlayerTankSpawnService(List<Tank> tankList, TankView tankView) 
+    private PlayerTankView tankView;
+    public PlayerTankSpawnService(List<Tank> tankList, PlayerTankView tankView) 
     {
         this.tankList = tankList;
         this.tankView = tankView;
     }
 
-    public void CreateTank(TankType type)
+    public void CreateTank(PlayerTankClass type)
     {
         int tank = (int)type;
-        TankModel tankModel = new TankModel(tankList[tank].movementSpeed, tankList[tank].rotationSpeed, tankList[tank].tankType, tankList[tank].tankColor);
-        TankController tankController = new TankController(tankView, tankModel);
+        PlayerTankModel tankModel = new PlayerTankModel(tankList[tank].movementSpeed, tankList[tank].rotationSpeed, tankList[tank].tankType, tankList[tank].tankColor);
+        PlayerTankController tankController = new PlayerTankController(tankView, tankModel);
         GameService.Instance.EventService.OnPlayerSpawned?.Invoke();
     }
 }

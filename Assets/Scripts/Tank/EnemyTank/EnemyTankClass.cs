@@ -1,4 +1,4 @@
-public enum EnemyTankType
+public enum EnemyTankClass
 { 
     HeavyAssault,
     Scout,

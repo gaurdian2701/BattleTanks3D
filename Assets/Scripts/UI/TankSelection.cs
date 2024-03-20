@@ -6,19 +6,19 @@ public class TankSelection : MonoBehaviour
 {
     public void SelectGreenTank()
     {
-        GameService.Instance.PlayerTankSpawnService.CreateTank(TankType.GreenTank);
+        GameService.Instance.PlayerTankSpawnService.CreateTank(PlayerTankClass.GreenTank);
         this.gameObject.SetActive(false);
     }
 
     public void SelectBlueTank()
     {
-        GameService.Instance.PlayerTankSpawnService.CreateTank(TankType.BlueTank);
+        GameService.Instance.PlayerTankSpawnService.CreateTank(PlayerTankClass.BlueTank);
         this.gameObject.SetActive(false);
     }
 
     public void SelectRedTank()
     {
-        GameService.Instance.PlayerTankSpawnService.CreateTank(TankType.RedTank);
+        GameService.Instance.PlayerTankSpawnService.CreateTank(PlayerTankClass.RedTank);
         this.gameObject.SetActive(false);
     }
 }

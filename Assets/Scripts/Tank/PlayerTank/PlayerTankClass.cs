@@ -1,4 +1,4 @@
-﻿public enum TankType
+﻿public enum PlayerTankClass
 {
     GreenTank,
     BlueTank,

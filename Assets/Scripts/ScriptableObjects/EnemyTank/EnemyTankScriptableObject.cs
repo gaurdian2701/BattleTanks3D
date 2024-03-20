@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyTankScriptableObject", menuName = "ScriptableObjects/NewEnemyTank")]
 public class EnemyTankScriptableObject : ScriptableObject
 {
-    public EnemyTankType TankType;
+    public EnemyTankClass TankType;
     public Material TankColor;
     public float MovementSpeed;
     public float TankHealth;
