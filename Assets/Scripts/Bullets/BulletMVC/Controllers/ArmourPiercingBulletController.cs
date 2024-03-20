@@ -17,6 +17,6 @@ public class ArmourPiercingBulletController : BulletController
 
     public override void MoveBullet()
     {
-        rigidBody.AddForce(bulletModel.LaunchForce * launchForceMultiplier * fireDirection);
+        rigidBody.velocity = bulletModel.LaunchForce * launchForceMultiplier * fireDirection;
     }
 }
