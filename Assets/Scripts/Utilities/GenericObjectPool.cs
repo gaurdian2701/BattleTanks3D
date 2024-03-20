@@ -14,11 +14,10 @@ public class GenericObjectPool<T> where T : class
 
             if(item != null)
             {
-                item.IsUsed = false;
+                item.IsUsed = true;
                 return item.Item;
             }
         }
-
         return CreateNewPooledItem<U>();
     }
 
@@ -39,6 +38,7 @@ public class GenericObjectPool<T> where T : class
     public virtual void ReturnItemToPool(T item)
     {
         PooledItem itemFound = pooledItems.Find((itemToFind) => itemToFind.Item.Equals(item));
+        Debug.Log(itemFound.Item);
         if (itemFound != null)
             itemFound.IsUsed = false;
     }

@@ -5,18 +5,14 @@ using UnityEngine;
 public class ArmourPiercingBulletController : BulletController
 {
     private const int launchForceMultiplier = 2;
-    public ArmourPiercingBulletController(BulletView _bulletView, 
-        BulletModel _bulletModel, 
-        Transform firePos) :
-        base(_bulletView,
-            _bulletModel,
-            firePos)
+    public ArmourPiercingBulletController(BulletView _bulletView) :
+        base(_bulletView)
     {
 
     }
 
     public override void MoveBullet()
     {
-        rigidBody.velocity = bulletModel.LaunchForce * launchForceMultiplier * fireDirection;
+        bulletView.GetBulletRigidBody().velocity = bulletModel.LaunchForce * launchForceMultiplier * fireDirection;
     }
 }

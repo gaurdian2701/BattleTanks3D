@@ -11,7 +11,7 @@ public class HomingBulletController : BulletController
     private RaycastHit hit;
     private const float sphereCastRadius = 10f;
     private const float sphereCastDistance = 5f;
-    public HomingBulletController (BulletView _bulletView, BulletModel _bulletModel, Transform firePos) : base(_bulletView, _bulletModel, firePos)
+    public HomingBulletController (BulletView _bulletView) : base(_bulletView)
     {
         enemyHasBeenFound = false;
         enemyMask = bulletView.GetEnemyMask();
@@ -25,7 +25,7 @@ public class HomingBulletController : BulletController
                 enemyHasBeenFound = true;
 
             else
-                rigidBody.velocity = bulletModel.LaunchForce * fireDirection;
+                bulletView.GetBulletRigidBody().velocity = bulletModel.LaunchForce * fireDirection;
         }
         else
             HomeToTarget(hit.transform);       //Homing Logic
@@ -34,8 +34,8 @@ public class HomingBulletController : BulletController
     private void HomeToTarget(Transform targetTransform)
     {
         Quaternion lookRotation = Quaternion.LookRotation(targetTransform.transform.position - bulletView.transform.position, Vector3.up);
-        rigidBody.MoveRotation(lookRotation);
+        bulletView.GetBulletRigidBody().MoveRotation(lookRotation);
 
-        rigidBody.velocity = bulletView.transform.forward * bulletModel.LaunchForce;
+        bulletView.GetBulletRigidBody().velocity = bulletView.transform.forward * bulletModel.LaunchForce;
     }
 }

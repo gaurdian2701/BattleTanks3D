@@ -7,10 +7,8 @@ public class HighExplosiveBulletController : BulletController
 {
     private readonly Vector3 hitBoxSize = new Vector3(5f, 1f, 5f);
 
-    public HighExplosiveBulletController(BulletView _bulletView,
-        BulletModel _bulletModel,
-        Transform firePos) :
-       base(_bulletView, _bulletModel, firePos)
+    public HighExplosiveBulletController(BulletView _bulletView) :
+       base(_bulletView)
 
     {
         bulletView.SetHitBoxSize(hitBoxSize);
@@ -18,6 +16,6 @@ public class HighExplosiveBulletController : BulletController
 
     public override void MoveBullet()
     {
-        rigidBody.velocity = fireDirection * bulletModel.LaunchForce;
+        bulletView.GetBulletRigidBody().velocity = fireDirection * bulletModel.LaunchForce;
     }
 }

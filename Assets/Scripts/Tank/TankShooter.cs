@@ -69,20 +69,21 @@ public class TankShooter : MonoBehaviour
         switch(BulletSO.bulletType)
         {
             case BulletType.HighExplosive:
-                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<HighExplosiveBulletController>(bulletData);
+                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<HighExplosiveBulletController>();
                 break;
 
             case BulletType.Homing:
-                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<HomingBulletController>(bulletData);
+                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<HomingBulletController>();
                 break;
 
             case BulletType.ArmourPiercing:
-                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<ArmourPiercingBulletController>(bulletData);
+                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<ArmourPiercingBulletController>();
                 break;
 
             default:
-                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<ArmourPiercingBulletController>(bulletData);
+                bulletController = GameService.Instance.PoolService.BulletPool.GetBullet<ArmourPiercingBulletController>();
                 break;
         }
+        bulletController.ConfigureBullet(bulletData);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using UnityEngine;
 
 public class BulletView : MonoBehaviour
@@ -44,5 +45,6 @@ public class BulletView : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.1f);
         this.gameObject.SetActive(false);
+        GameService.Instance.PoolService.BulletPool.ReturnItemToPool(bulletController);
     }
 }
