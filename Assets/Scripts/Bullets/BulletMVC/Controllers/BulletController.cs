@@ -13,25 +13,18 @@ public class BulletController
 
     public BulletController(BulletView _bulletView, BulletModel _bulletModel, Transform _firePos)
     {
-        bulletView = _bulletView;
-        bulletModel = _bulletModel;
-
         firePos = _firePos;
-
-        bulletView.gameObject.SetActive(true);
-        bulletView.gameObject.transform.position = firePos.position;
-        bulletView.gameObject.transform.rotation = firePos.rotation;
-
+        bulletView = GameObject.Instantiate(_bulletView, firePos.position, firePos.rotation);
         bulletView.SetBulletController(this);
+        bulletModel = _bulletModel;
 
         rigidBody = _bulletView.GetBulletRigidBody();
         fireDirection = firePos.forward;
     }
 
-    public virtual void MoveBullet() { }
-
+    public virtual void MoveBullet() {}
     public void OnTriggerEnter(Collider other) 
     {
-        Debug.Log(other.gameObject.name + " damaged by " + bulletModel.damageDealt + " points!");
+        GameService.Instance.PoolService.BulletPool.ReturnItemToPool(this);
     }
 }

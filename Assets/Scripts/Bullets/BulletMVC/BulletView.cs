@@ -12,7 +12,6 @@ public class BulletView : MonoBehaviour
 
     private void Awake()
     {
-        rigidBody = GetComponent<Rigidbody>();
         hitBox.gameObject.SetActive(false);
     }
 

@@ -18,6 +18,6 @@ public class HighExplosiveBulletController : BulletController
 
     public override void MoveBullet()
     {
-        rigidBody.velocity = fireDirection * bulletModel.launchForce;
+        rigidBody.velocity = fireDirection * bulletModel.LaunchForce;
     }
 }

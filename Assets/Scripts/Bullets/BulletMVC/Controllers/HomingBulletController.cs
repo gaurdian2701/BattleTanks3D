@@ -25,7 +25,7 @@ public class HomingBulletController : BulletController
                 enemyHasBeenFound = true;
 
             else
-                rigidBody.velocity = bulletModel.launchForce * fireDirection;
+                rigidBody.velocity = bulletModel.LaunchForce * fireDirection;
         }
         else
             HomeToTarget(hit.transform);       //Homing Logic
@@ -36,6 +36,6 @@ public class HomingBulletController : BulletController
         Quaternion lookRotation = Quaternion.LookRotation(targetTransform.transform.position - bulletView.transform.position, Vector3.up);
         rigidBody.MoveRotation(lookRotation);
 
-        rigidBody.velocity = bulletView.transform.forward * bulletModel.launchForce;
+        rigidBody.velocity = bulletView.transform.forward * bulletModel.LaunchForce;
     }
 }

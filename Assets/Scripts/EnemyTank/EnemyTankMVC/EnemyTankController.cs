@@ -7,7 +7,6 @@ public class EnemyTankController
     private EnemyTankModel enemyTankModel;
     private EnemyTankView enemyTankView;
     private Rigidbody rigidBody;
-    private BulletCreationController bulletCreationController;
     public EnemyTankController(EnemyTankModel model, EnemyTankView _tankView)
     {
         enemyTankModel = model;
@@ -15,9 +14,6 @@ public class EnemyTankController
         enemyTankView.SetEnemyTankController(this);
         enemyTankView.SetColorToTankParts(enemyTankModel.TankColor);
         rigidBody = enemyTankView.GetRigidbody();
-
-        BulletModel bulletModel = new BulletModel(enemyTankModel.BulletSO.minLaunchForce, enemyTankModel.BulletSO.damageDealt);
-        bulletCreationController = new BulletCreationController(bulletModel, enemyTankModel.BulletSO.bulletType, enemyTankModel.fireTransform);
     }
 
     public EnemyTankModel GetEnemyTankModel() { return enemyTankModel; }
@@ -43,6 +39,6 @@ public class EnemyTankController
 
     public void ShootTankShell()
     {
-        BulletController bulletController = bulletCreationController.CreateBulletController();
+
     }
 }

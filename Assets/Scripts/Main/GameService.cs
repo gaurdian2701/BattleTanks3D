@@ -7,14 +7,17 @@ public class GameService : GenericMonoSingleton<GameService>
 {
     [SerializeField] private TankView tankView;
     [SerializeField] private List<Tank> tankList = new List<Tank>();
+    [SerializeField] private PoolServiceScriptableObject poolServiceScriptableObject;
     public EventService EventService { get; private set; }
     public PlayerTankSpawnService PlayerTankSpawnService { get; private set; }
+    public PoolService PoolService { get; private set; }
     
     protected override void Awake()
     {
         base.Awake();
         EventService = new EventService();
         PlayerTankSpawnService = new PlayerTankSpawnService(tankList, tankView);
+        PoolService = new PoolService(poolServiceScriptableObject);
     }
 }
 

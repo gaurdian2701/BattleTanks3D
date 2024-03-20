@@ -2,33 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPool : GenericMonoSingleton<BulletPool>
+public class BulletPool : GenericObjectPool<BulletController>
 {
-    [SerializeField] private int poolSize;
-    [SerializeField] private BulletView bulletPrefab;
-
-    [SerializeField] private List<BulletView> bulletList = new List<BulletView>();
-
-    private void Start()
+    private BulletView bulletPrefab;
+    private BulletModel bulletModel;
+    private Transform firePos;
+    public BulletPool(BulletPoolScriptableObject BulletPoolSO)
     {
-        bulletList.Capacity = poolSize;
-
-        for(int i=0; i<bulletList.Capacity; i++)
-        {
-            BulletView bullet = Instantiate(bulletPrefab);
-            bullet.gameObject.SetActive(false);
-            bulletList.Add(bullet);
-        }
+        bulletPrefab = BulletPoolSO.BulletPrefab;
     }
 
-    public BulletView GetBullet()
+    public BulletController GetBullet<T>(BulletData bulletData) where T : BulletController
     {
-        for(int i=0; i<bulletList.Capacity; i++)
-        {
-            if (!bulletList[i].gameObject.activeInHierarchy)
-                return bulletList[i];
-        }
+        bulletModel = bulletData.BulletModel;
+        firePos = bulletData.FirePos;
+        return GetItemFromPool<T>();
+    }
 
-        return null;
-    }   
+    protected override BulletController CreateItem<U>()
+    {
+        if (typeof(U) == typeof(ArmourPiercingBulletController))
+            return new ArmourPiercingBulletController(bulletPrefab, bulletModel, firePos);
+        else if (typeof(U) == typeof(HighExplosiveBulletController))
+            return new HighExplosiveBulletController(bulletPrefab, bulletModel, firePos);
+        else if (typeof(U) == typeof(HomingBulletController))
+            return new HomingBulletController(bulletPrefab, bulletModel, firePos);
+        else
+            return new ArmourPiercingBulletController(bulletPrefab, bulletModel, firePos);
+    }
+}
+
+public class BulletData
+{
+    public BulletModel BulletModel;
+    public Transform FirePos;
+
+    public BulletData(BulletModel BulletModel, Transform FirePos)
+    {
+        this.BulletModel = BulletModel;
+        this.FirePos = FirePos;
+    }
 }

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class BulletModel
 {
-    public float launchForce;
-    public float damageDealt;
-    public BulletModel(float _launchForce, float _damageDealt)
+    public float LaunchForce;
+    public float DamageDealt;
+    public BulletType BulletType;
+    public BulletModel(float _launchForce, BulletType _bulletType, float _damageDealt)
     {
-        launchForce = _launchForce;
-        damageDealt = _damageDealt;
+        LaunchForce = _launchForce;
+        DamageDealt = _damageDealt;
+        BulletType = _bulletType;    
     }
 }
