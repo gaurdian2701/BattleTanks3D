@@ -59,7 +59,7 @@ public class PlayerTankShooter : MonoBehaviour
     }
     private void Fire()
     {
-        GameService.Instance.EventService.BulletFired?.Invoke();
+        GameService.Instance.EventService.OnBattleEventOccurred?.Invoke(BattleEventType.TankShellFired);
         fired = false;
         currentLaunchForce = minLaunchForce;
         BulletModel bulletModel = new BulletModel(currentLaunchForce, BulletSO.bulletType, bulletDamage);

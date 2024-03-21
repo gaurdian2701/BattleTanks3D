@@ -6,5 +6,5 @@ using UnityEngine;
 public class EventService
 {
     public Action OnPlayerSpawned;
-    public Action BulletFired;
+    public Action<BattleEventType> OnBattleEventOccurred;
 }

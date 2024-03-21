@@ -8,7 +8,6 @@ public class TankHealthController<T> : IDamageable where T : TankController<T>
     public TankHealthController(TankController<T> controller)
     {
         this.controller = controller;
-        Debug.Log(typeof(T));
     }
     public void TakeDamage(float damage)
     {

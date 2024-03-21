@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 34389539}
   - component: {fileID: 34389538}
   - component: {fileID: 34389537}
+  - component: {fileID: 34389540}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -218,6 +219,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &34389540
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34389535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0.23
+  m_FrequencyGain: 2.37
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &520421830
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1852768602}
   - component: {fileID: 1852768601}
+  - component: {fileID: 1852768603}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -819,6 +838,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1852768603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852768600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50bd3dee2bb7d64ba6dca81f6ca4aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualcam: {fileID: 1852768601}
+  cameraShakeSO: {fileID: 11400000, guid: 18e02f63811a20849a2a7b63bc5d98e3, type: 2}
+  amplitudeGain: 3
+  frequencyGain: 2
+  shakeTime: 0.3
 --- !u!1 &1977657597
 GameObject:
   m_ObjectHideFlags: 0
