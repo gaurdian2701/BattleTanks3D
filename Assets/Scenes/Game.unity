@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0.05, y: 6.76, z: -8.22}
+  m_FollowOffset: {x: 0.05, y: 3.43, z: -8.22}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -852,9 +852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualcam: {fileID: 1852768601}
   cameraShakeSO: {fileID: 11400000, guid: 18e02f63811a20849a2a7b63bc5d98e3, type: 2}
-  amplitudeGain: 3
-  frequencyGain: 2
-  shakeTime: 0.3
 --- !u!1 &1977657597
 GameObject:
   m_ObjectHideFlags: 0

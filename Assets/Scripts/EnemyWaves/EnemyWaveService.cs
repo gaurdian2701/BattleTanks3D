@@ -6,6 +6,7 @@ public class EnemyWaveService
 {
     private EnemyWaveServiceScriptableObject enemyWaveServiceSO;
     private EnemyTankModel enemyTankModel;
+    private int enemiesLeftInWave;
     private EnemyTankController enemyTankController;
 
     public EnemyWaveService(EnemyWaveServiceScriptableObject enemyWaveServiceSO)
@@ -27,6 +28,7 @@ public class EnemyWaveService
     {
         //other logic for starting wave???
         SpawnEnemies(waveSO);
+        enemiesLeftInWave = waveSO.EnemyData.Count;
     }
 
     private void SpawnEnemies(EnemyWaveScriptableObject waveSO)

@@ -34,7 +34,7 @@ public class BulletView : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         bulletController.OnTriggerEnter(other);
-        GameService.Instance.EventService.OnBattleEventOccurred(BattleEventType.ShellExplosion);
+        GameService.Instance.EventService.InvokeBattleEventOccurredEvent(BattleEventType.ShellExplosion);
     }
     private void OnCollisionEnter(Collision collision)
     {

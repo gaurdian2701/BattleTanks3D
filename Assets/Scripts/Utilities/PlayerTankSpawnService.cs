@@ -18,6 +18,6 @@ public class PlayerTankSpawnService
         int tank = (int)type;
         PlayerTankModel tankModel = new PlayerTankModel(tankList[tank].movementSpeed, tankList[tank].rotationSpeed, tankList[tank].tankType, tankList[tank].tankColor);
         PlayerTankController tankController = new PlayerTankController(tankView, tankModel);
-        GameService.Instance.EventService.OnPlayerSpawned?.Invoke();
+        GameService.Instance.EventService.InvokePlayerSpawnedEvent();
     }
 }
