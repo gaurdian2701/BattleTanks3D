@@ -11,8 +11,8 @@ public class TankController<T> where T : TankController<T>
     }
 
     public void TakeDamage(float damage) => tankHealthController.TakeDamage(damage);
-    public virtual void Move(float movement, float movementSpeed) { }
-    public virtual void Rotate(float rotation, float rotationSpeed) { }
+    public virtual void Move(float movement) { }
+    public virtual void Rotate(float rotation) { }
     public virtual void Move(Vector3 movementVector) { }
     public virtual void Rotate(Vector3 rotationVector) { }
 }

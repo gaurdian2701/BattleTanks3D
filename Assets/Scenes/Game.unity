@@ -883,23 +883,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankView: {fileID: 5427311951441844074, guid: 2406ac9feaa04a243ad6b99f09efe97f,
     type: 3}
-  tankList:
-  - movementSpeed: 10
-    rotationSpeed: 35
-    tankType: 0
-    tankColor: {fileID: 2100000, guid: c39933e60e73205419d1f79a2af1fdac, type: 2}
-  - movementSpeed: 8
-    rotationSpeed: 25
-    tankType: 1
-    tankColor: {fileID: 2100000, guid: ff21ff0ea9b18924bb1fdfbb0e58f5cb, type: 2}
-  - movementSpeed: 20
-    rotationSpeed: 45
-    tankType: 2
-    tankColor: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+  playerTanks:
+  - {fileID: 11400000, guid: 951cde242498934458da6203bb7360b5, type: 2}
+  - {fileID: 11400000, guid: 40011165c9a30aa448a2b46f8d4623ec, type: 2}
+  - {fileID: 11400000, guid: cdca9c63bcc87b1449f8c855a700f344, type: 2}
   poolServiceScriptableObject: {fileID: 11400000, guid: daf9a36202c83c64c9582605c2068d25,
     type: 2}
   enemyWaveServiceScriptableObject: {fileID: 11400000, guid: 5515b51f500223e49ad17e9c910e624f,
     type: 2}
+  playerTankSO: {fileID: 11400000, guid: 951cde242498934458da6203bb7360b5, type: 2}
 --- !u!4 &1977657599
 Transform:
   m_ObjectHideFlags: 0

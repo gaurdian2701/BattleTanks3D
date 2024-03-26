@@ -6,14 +6,17 @@ public class PlayerTankModel
 {
     private PlayerTankController tankController;
 
-    public float movementSpeed;
+    public float maxSpeed;
     public float rotationSpeed;
+    public int mass;
+    public float acceleration;
     public PlayerTankClass tankType;
     public Material tankColor;
 
-    public PlayerTankModel(float _movementSpeed, float _rotationSpeed, PlayerTankClass _tankType, Material _tankColor) 
-    { 
-        movementSpeed = _movementSpeed;
+    public PlayerTankModel(float _maxSpeed, float _acceleration,float _rotationSpeed, PlayerTankClass _tankType, Material _tankColor) 
+    {
+        maxSpeed = _maxSpeed;
+        acceleration = _acceleration;
         rotationSpeed = _rotationSpeed;
         tankType = _tankType;
         tankColor = _tankColor;

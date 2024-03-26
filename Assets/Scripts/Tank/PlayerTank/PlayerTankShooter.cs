@@ -7,6 +7,7 @@ public class PlayerTankShooter : MonoBehaviour
 {
     [SerializeField] private Transform fireTransform;
     [SerializeField] private BulletScriptableObject BulletSO;
+    [SerializeField] private AudioSource tankShotAudioSource;
 
     private float minLaunchForce;
     private float maxLaunchForce;
@@ -59,6 +60,7 @@ public class PlayerTankShooter : MonoBehaviour
     }
     private void Fire()
     {
+        tankShotAudioSource.PlayOneShot(tankShotAudioSource.clip);
         GameService.Instance.EventService.InvokeBattleEventOccurredEvent(BattleEventType.TankShellFired);
         fired = false;
         currentLaunchForce = minLaunchForce;

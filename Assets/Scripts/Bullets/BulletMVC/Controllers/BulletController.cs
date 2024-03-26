@@ -34,6 +34,5 @@ public class BulletController
     public virtual void MoveBullet() { }
     public void OnTriggerEnter(Collider other) 
     {
-        Debug.Log("Damaged " + other.gameObject);
     }
 }
